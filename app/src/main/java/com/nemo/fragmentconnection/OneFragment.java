@@ -43,6 +43,11 @@ public class OneFragment extends Fragment {
         void onFragmentInteraction(String link);
     };
 
+    public void ChangeName(String name){
+     Button button = (Button)getView().findViewById(R.id.bUpdate);
+        button.setText(name);
+    }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);

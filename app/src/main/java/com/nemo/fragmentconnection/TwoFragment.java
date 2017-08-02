@@ -2,6 +2,7 @@ package com.nemo.fragmentconnection;
 
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import android.widget.TextView;
  */
 public class TwoFragment extends Fragment {
 
+    private onFragmentinterectionListener mListener;
 
     public TwoFragment() {
         // Required empty public constructor
@@ -27,6 +29,20 @@ public class TwoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_two, container, false);
+    }
+
+    interface onFragmentinterectionListener{
+        void onFragmentinterection();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        try {
+            mListener = (onFragmentinterectionListener)context;
+        }catch (Exception e){
+
+        }
     }
 
     public void setText(String item){

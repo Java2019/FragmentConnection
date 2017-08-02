@@ -6,7 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 
 public class MainActivity extends AppCompatActivity
-        implements OneFragment.onFragmentInteractionListener{
+        implements OneFragment.onFragmentInteractionListener,
+        TwoFragment.onFragmentinterectionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,14 @@ public class MainActivity extends AppCompatActivity
                 findFragmentById(R.id.Two);
         if (twoFragment != null && twoFragment.isInLayout()){
             twoFragment.setText(link);
+        }
+    }
+
+    @Override
+    public void onFragmentinterection() {
+        OneFragment oneFragment = (OneFragment) getSupportFragmentManager().findFragmentById(R.id.One);
+        if (oneFragment != null){
+            oneFragment.ChangeName("new name");
         }
     }
 }
