@@ -17,7 +17,7 @@ import java.util.Date;
  */
 public class OneFragment extends Fragment {
 
-    private onFragmentInteractionListener mListener;
+    public onFragmentInteractionListener mListener;
 
      @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,7 +39,7 @@ public class OneFragment extends Fragment {
         mListener.onFragmentInteraction(s);
     }
 
-    private interface onFragmentInteractionListener{
+    interface onFragmentInteractionListener{
         void onFragmentInteraction(String link);
     };
 

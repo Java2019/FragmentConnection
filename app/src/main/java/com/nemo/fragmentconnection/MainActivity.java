@@ -1,10 +1,12 @@
 package com.nemo.fragmentconnection;
 
+import android.support.v4.app.ListFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+        implements OneFragment.onFragmentInteractionListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,5 +18,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
+    }
+
+    @Override
+    public void onFragmentInteraction(String link) {
+        TwoFragment twoFragment = (TwoFragment)getSupportFragmentManager().
+                findFragmentById(R.id.Two);
+        if (twoFragment != null && twoFragment.isInLayout()){
+            twoFragment.setText(link);
+        }
     }
 }
