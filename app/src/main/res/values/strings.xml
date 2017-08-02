@@ -5,4 +5,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="bUpdate">Update</string>
     <string name="Set">Settings</string>
+    <string name="Change">Change name</string>
 </resources>

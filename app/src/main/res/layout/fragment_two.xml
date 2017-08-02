@@ -13,5 +13,10 @@
         android:textAlignment="center"
         android:textSize="30sp"
         android:textStyle="bold"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bChange"
+        android:text="@string/Change"/>
 
 </FrameLayout>

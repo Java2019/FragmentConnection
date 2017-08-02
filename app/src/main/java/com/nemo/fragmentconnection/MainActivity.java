@@ -32,8 +32,9 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onFragmentinterection() {
-        OneFragment oneFragment = (OneFragment) getSupportFragmentManager().findFragmentById(R.id.One);
-        if (oneFragment != null){
+        OneFragment oneFragment = (OneFragment) getSupportFragmentManager().
+                findFragmentById(R.id.One);
+        if (oneFragment != null && oneFragment.isInLayout()){
             oneFragment.ChangeName("new name");
         }
     }
